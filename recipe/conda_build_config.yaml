@@ -1,0 +1,24 @@
+channel_sources:
+  - valmar,conda-forge,defaults
+channel_targets:
+  - valmar main
+
+python:
+  # part of a zip_keys: python, python_impl, numpy
+  - 2.7.15 *_cpython  # [not (aarch64 or ppc64le or win)]]
+  - 3.6.* *_cpython    # [not (osx and arm64)]
+  - 3.7.* *_cpython    # [not (osx and arm64)]
+  - 3.8.* *_cpython
+python_impl:
+  # part of a zip_keys: python, python_impl, numpy
+  - cpython   # [not (aarch64 or ppc64le or win)]]
+  - cpython   # [not (osx and arm64)]
+  - cpython   # [not (osx and arm64)]
+  - cpython
+numpy:
+  # part of a zip_keys: python, python_impl, numpy
+  - 1.16  # [not (aarch64 or ppc64le or win)]]
+  - 1.16   # [not (osx and arm64)]
+  - 1.16   # [not (osx and arm64)]
+  - 1.16   # [not (osx and arm64)]
+  - 1.19   # [osx and arm64]
