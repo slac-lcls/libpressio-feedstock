@@ -1,0 +1,57 @@
+{% set name = "libpressio" %}
+{% set version = "0.54.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/robertu94/libpressio/archive/{{ version }}.tar.gz
+  sha256: cd28ddf054446c286f9bfae563aa463e638ee03e0353c0828a9ce44be4ce2df9
+
+build:
+  skip: True  # [win or osx]
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake
+    - make
+    - pkg-config
+  host:
+    - sz
+    - swig >=4.0.0
+    - numpy
+    - hdf5
+    - stdcompat
+  run:
+    - sz
+    - swig >=4.0.0
+    - numpy
+    - hdf5
+    - stdcompat
+
+about:
+  home: https://robertu94.github.io/libpressio
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE.md
+  summary: 'Library to abstract between compressors and their configurations'
+  description: |
+    pressio is latin for compression. LibPressio is a C++ library with
+    C compatible bindings to abstract between different lossless and
+    lossy compressors and their configurations. It solves the problem
+    of having to having to write separate application level code for
+    each lossy compressor that is developed. Instead, users write
+    application level code using LibPressio, and the library will make
+    the correct underlying calls to the compressors. It provides
+    interfaces to represent data, compressors settings, and compressors.
+  doc_url: https://robertu94.github.io/libpressio
+  dev_url: https://github.com/robertu94/libpressio
+
+extra:
+  recipe-maintainers:
+    - valmar
+    - chrisvam
