@@ -68,7 +68,6 @@ fi
 
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
 docker run ${DOCKER_RUN_ARGS} \
-	   --privileged \
            -v "${RECIPE_ROOT}":/home/conda/recipe_root:rw,z,delegated \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z,delegated \
            -e CONFIG \
