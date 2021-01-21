@@ -1,5 +1,5 @@
 {% set name = "libpressio" %}
-{% set version = "0.54.0" %}
+{% set version = "0.56.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/robertu94/libpressio/archive/{{ version }}.tar.gz
-  sha256: cd28ddf054446c286f9bfae563aa463e638ee03e0353c0828a9ce44be4ce2df9
+  sha256: 1ae20415ba50a4dcfec7992e9a571f09f075f077ebdd7c1afb9a19b158f6205d
 
 build:
   skip: True  # [win or osx]
@@ -37,7 +37,7 @@ about:
   home: https://robertu94.github.io/libpressio
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.md
+  license_file: COPYRIGHT.txt
   summary: 'Library to abstract between compressors and their configurations'
   description: |
     pressio is latin for compression. LibPressio is a C++ library with
