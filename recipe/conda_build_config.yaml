@@ -1,4 +1,4 @@
 channel_sources:
-  - valmar,conda-forge,defaults
+  - lcls-i,conda-forge,defaults
 channel_targets:
-  - valmar main
+  - lcls-i main
