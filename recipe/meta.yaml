@@ -1,5 +1,5 @@
 {% set name = "libpressio" %}
-{% set version = "0.60.0" %}
+{% set version = "0.63.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/robertu94/libpressio/archive/{{ version }}.tar.gz
-  sha256: a57fce96d50a603075a8a4a583431a1a03170df4d2894ff30f84d8c5ab4caf47
+  sha256: 32d716f52073d7ea246d01fefb420bfe5b834ebc10579edd79ebce7a87dd1a81 
 
 build:
   skip: True  # [win or osx]
-  number: 2
+  number: 0
 
 requirements:
   build:
