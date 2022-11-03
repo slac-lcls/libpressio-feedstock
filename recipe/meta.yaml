@@ -1,17 +1,17 @@
 {% set name = "libpressio" %}
-{% set version = "0.72.2" %}
+{% set version = "0.87.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/robertu94/libpressio/archive/{{ version }}.tar.gz
-  sha256: 1f620b8af272dd2823712c1e38a69c6375febe49eb9155a3f04667ea1931ebdb 
+  url: https://github.com/robertu94/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 621fbb8d164580bbc1293248335e240438b80af94fe901e56fa71a2d9b02396b
 
 build:
   skip: True  # [win or osx]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,18 +23,32 @@ requirements:
   host:
     - python
     - sz
+    - sz3
     - swig
+    - fpzip
+    - lua
     - numpy
     - hdf5
     - stdcompat
+    - openmpi
+    - mpi4py
+    - sol2
+    - nlohmann_json
   run:
     - python
     - sz
+    - sz3
     - swig
+    - fpzip
+    - lua
     - numpy
     - hdf5
     - stdcompat
     - numcodecs
+    - openmpi
+    - mpi4py
+    - sol2
+    - nlohmann_json
 
 about:
   home: https://robertu94.github.io/libpressio
