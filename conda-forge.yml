@@ -14,8 +14,8 @@ provider:
   linux: github_actions
 channels:
   sources:
-    - lcls-i
+    - lcls-ii
     - conda-forge
     - defaults
   targets:
-    - ["lcls-i", "main"]
+    - ["lcls-ii", "main"]

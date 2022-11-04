@@ -1,4 +1,4 @@
 channel_sources:
-  - lcls-i,conda-forge,defaults
+  - lcls-ii,conda-forge,defaults
 channel_targets:
-  - lcls-i main
+  - lcls-ii main
