@@ -1,5 +1,5 @@
 {% set name = "libpressio" %}
-{% set version = "0.93.0" %}
+{% set version = "0.94.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/robertu94/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 1da5940aaf0190a810988dcd8f415b9c8db53bbbdfcb627d899921c89170d990
+  sha256: 4250597cdd54043a7d5009ffc3feea3eac9496cdd38ea3f61f9727b7acd09add
 
 build:
   skip: True  # [win or osx]
-  number: 1
+  number: 8
 
 requirements:
   build:
@@ -20,8 +20,10 @@ requirements:
     - cmake
     - make
     - pkg-config
+    - python
   host:
     - python
+    - pybind11
     - sz
     - sz3
     - swig
@@ -34,6 +36,7 @@ requirements:
     - mpi4py
     - sol2
     - nlohmann_json
+    - qoz
   run:
     - python
     - sz
@@ -49,7 +52,7 @@ requirements:
     - mpi4py
     - sol2
     - nlohmann_json
-
+    - qoz
 about:
   home: https://robertu94.github.io/libpressio
   license: BSD-3-Clause

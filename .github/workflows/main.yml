@@ -1,0 +1,24 @@
+name: conda_build_and_upload
+on:
+  push:
+    tags:
+      - build*
+
+jobs:
+  conda_build_and_upload:
+    runs-on: 'ubuntu-latest'
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.11
+          activate-environment: conda_build
+          environment-file: conda_build.yml
+          auto-activate-base: false
+      - name: build package
+        run: |
+          $CONDA/bin/conda config --set anaconda_upload yes
+          $CONDA/bin/conda build --user lcls-ii --token ${{ secrets.ANACONDA_TOKEN }} -c lcls-ii -c conda-forge recipe
