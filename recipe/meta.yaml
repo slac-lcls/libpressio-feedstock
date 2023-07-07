@@ -1,5 +1,5 @@
 {% set name = "libpressio" %}
-{% set version = "0.94.0" %}
+{% set version = "0.96.0" %}
 
 package:
   name: {{ name|lower }}
