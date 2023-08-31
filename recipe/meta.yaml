@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/robertu94/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 4250597cdd54043a7d5009ffc3feea3eac9496cdd38ea3f61f9727b7acd09add
+  sha256: 42f563b70c4f77abffb430284f0c5bc9adba2666412ee4072d6f97da88f0c1a0
 
 build:
   skip: True  # [win or osx]
