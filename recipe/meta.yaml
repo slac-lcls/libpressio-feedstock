@@ -1,5 +1,5 @@
 {% set name = "libpressio" %}
-{% set version = "0.96.0" %}
+{% set version = "0.97.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,13 @@ package:
 
 source:
   url: https://github.com/robertu94/{{ name }}/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 42f563b70c4f77abffb430284f0c5bc9adba2666412ee4072d6f97da88f0c1a0
+  sha256: 41329ea43ebe76f434f0c43b897a9b378b0a4601cccd3efedaa4f39c73936340
+  patches:
+    - szx.patch
 
 build:
   skip: True  # [win or osx]
-  number: 8
+  number: 1
 
 requirements:
   build:
@@ -26,6 +28,7 @@ requirements:
     - pybind11
     - sz
     - sz3
+    - szx
     - swig
     - fpzip
     - lua
@@ -41,6 +44,7 @@ requirements:
     - python
     - sz
     - sz3
+    - szx
     - swig
     - fpzip
     - lua

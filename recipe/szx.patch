@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4750d69..92d4e74 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -309,7 +309,7 @@ option(LIBPRESSIO_HAS_SZx "build the SZx plugin" OFF)
+ if(LIBPRESSIO_HAS_SZx)
+   set(LIBPRESSIO_COMPRESSORS "${LIBPRESSIO_COMPRESSORS} SZx")
+   find_library(szx_LIBRARY SZx REQUIRED)
+-  find_file(szx_HEADER szx.h REQUIRED)
++  find_file(szx_HEADER szx/szx.h REQUIRED)
+   get_filename_component(szx_INCLUDE_DIR "${szx_HEADER}" DIRECTORY)
+   target_sources(libpressio
+     PRIVATE

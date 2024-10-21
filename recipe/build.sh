@@ -11,6 +11,8 @@ else
 fi
 
 
+export CFLAGS="-I{PREFIX}/include -I{BUILD_PREFIX}/include"
+export CXXLAGS="-I{PREFIX}/include -I{BUILD_PREFIX}/include"
 export LDFLAGS="-lrt"
 export PKG_CONFIG_PATH=${PREFIX}/share/pkgconfig:${PREFIX}/lib/pkgconfig:$PKG_CONFIG_PATH
 
@@ -28,6 +30,7 @@ ${BUILD_PREFIX}/bin/cmake -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
   -DPython3_EXECUTABLE=${PYTHON} \
   -DLIBPRESSIO_HAS_SZ=ON  \
   -DLIBPRESSIO_HAS_SZ3=ON  \
+  -DLIBPRESSIO_HAS_SZx=ON  \
   -DLIBPRESSIO_HAS_QoZ=ON \
   -DLIBPRESSIO_HAS_FPZIP=ON  \
   -DLIBPRESSIO_HAS_LUA=ON \
